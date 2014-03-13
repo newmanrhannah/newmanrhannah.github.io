@@ -1,0 +1,112 @@
+<style type="text/css">
+
+body {
+  width:760px;
+  margin:40px auto;
+  background-color: aquamarine;
+  font-family: georgia, sans;
+}
+
+.drug-box {
+	float: left;
+	background-color:
+	font-size: 27px;
+	width: 100px;
+	padding:30px;
+}
+
+.selected {background-color: black}
+
+.total_dose {
+float:right;
+width:100px ;
+padding:10px;
+border:5px solid gray;
+margin:30px;}
+
+.overdose{
+	background-color: red;}
+
+
+h1 {
+  border-bottom:1px solid #dedede;
+  margin-bottom:20px;
+  padding-bottom:20px;
+}
+
+</style>
+
+<h1>Starter interactive</h1>
+
+<div class="drug-box" id="Excedrin" data-dosage="2000">
+<img src="http://propublica.s3.amazonaws.com/projects/projectx/labels/excedrin.jpg"></div>
+
+<div class="drug-box" id="Nyquil" data-dosage="2600"><img src="http://propublica.s3.amazonaws.com/projects/projectx/labels/nyquil.jpg"></div>
+
+<div class="drug-box" id="Robitussin" data-dosage="3840">
+<img src="http://propublica.s3.amazonaws.com/projects/projectx/labels/robitussin.jpg"></div>
+
+<div class="drug-box" id="Sudafed" data-dosage="3250"><img src="http://propublica.s3.amazonaws.com/projects/projectx/labels/sudafed.jpg"></div>
+
+<div class="drug-box" id="Alka_Seltzer_Plus" data-dosage="2000"><img src="http://propublica.s3.amazonaws.com/projects/projectx/labels/alkaseltzer.jpg"></div>
+
+<div class="drug-box" id="Theraflu" data-dosage="3900"><img src="http://propublica.s3.amazonaws.com/projects/projectx/labels/theraflu.jpg"></div>
+
+<div class="drug-box" id="Tylenol_Extra_Strength" data-dosage="3000"><img src="http://propublica.s3.amazonaws.com/projects/projectx/labels/tylenolextrastrngth.jpg"></div>
+
+<div class="drug-box" id="Zicam" data-dosage="3000"><img src="http://propublica.s3.amazonaws.com/projects/projectx/labels/zicam.jpg"></div>
+
+<div class="drug-box" id="Anacin" data-dosage="4000"><img src="http://propublica.s3.amazonaws.com/projects/projectx/labels/anacin.jpg"></div>
+
+<div class="drug-box" id="Childrens_Tylenol" data-dosage="800"><img src="http://propublica.s3.amazonaws.com/projects/projectx/labels/childrenstylenol.jpg"></div>
+
+<div class="drug-box" id="Dimetapp" data-dosage="800"><img src="http://propublica.s3.amazonaws.com/projects/projectx/labels/dimetapp.jpg"></div>
+
+<div class="drug-box" id="Panadol" data-dosage="800"><img src="http://propublica.s3.amazonaws.com/projects/projectx/labels/panadol.jpg"></div>
+
+<div class="drug-box" id="Dayquil" data-dosage="1300"><img src="http://propublica.s3.amazonaws.com/projects/projectx/labels/dayquil.jpg"></div>
+
+<div class="drug-box" id="Coricidin" data-dosage="3900"><img src="http://propublica.s3.amazonaws.com/projects/projectx/labels/coricidin.jpg"></div>
+
+<div class="drug-box" id="Tylenol_with_codeine" data-dosage="4000"><img src="http://propublica.s3.amazonaws.com/projects/projectx/labels/tylenolwcodeine.jpg"></div>
+
+<div class="drug-box" id="Vicodin" data-dosage="3960"><img src="http://propublica.s3.amazonaws.com/projects/projectx/labels/vicodin.jpg"></div>
+
+<div class="drug-box" id="Percocet" data-dosage="3900"><img src="http://propublica.s3.amazonaws.com/projects/projectx/labels/percoset.jpg"></div>
+
+<div class="drug-box" id="Hydrocodone_Bitartrate" data-dosage="3900"><img src="http://propublica.s3.amazonaws.com/projects/projectx/labels/hydrocodone.jpg"></div>
+
+<div class="drug-box" id="Oxycodone_and_Acetamitophene" data-dosage="3900"><img src="http://propublica.s3.amazonaws.com/projects/projectx/labels/oxycodone.jpg"></div>
+
+<div class="drug-box" id="Ultracet" data-dosage="2600"><img src="http://propublica.s3.amazonaws.com/projects/projectx/labels/ultracet.jpg"></div>
+
+<div class="total_dose"></div>
+
+<script type="text/javascript" src="jquery-1.11.0.min.js"></script>
+
+
+<script type="text/javascript">
+
+// this is how you comment in javascript.
+console.log("this is where javascript will go!");
+
+var total=0;
+
+
+$(".drug-box").click( function()
+           {
+             var dose=($(this).attr("data-dosage"))
+             var alreadyadded=$(this).hasClass("selected")
+             if(alreadyadded){total-=parseInt(dose)}else{total+=parseInt(dose)};
+             console.log(total);
+             if(parseInt(total)>=4000){
+             $(".total_dose").addClass("Overdose")}
+             if(parseInt(total)<4000){
+             $(".total_dose").removeClass("Overdose")}
+             $(".total_dose").html("Total Dose:  "+total)
+$(this).toggleClass("selected")
+
+           });
+    
+
+</script>
