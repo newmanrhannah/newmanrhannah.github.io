@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport"></meta>
+<title>Invasive Eats - Google Fusion Tables</title>
+<p 
+<style type="text/css">
+</style>
+
+<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false&amp;v=3"></script>
+
+<script type="text/javascript">
+  function initialize() {
+    google.maps.visualRefresh = true;
+    var isMobile = (navigator.userAgent.toLowerCase().indexOf('android') > -1) ||
+      (navigator.userAgent.match(/(iPod|iPhone|iPad|BlackBerry|Windows Phone|iemobile)/));
+    if (isMobile) {
+      var viewport = document.querySelector("meta[name=viewport]");
+      viewport.setAttribute('content', 'initial-scale=1.0, user-scalable=no');
+    }
+    var mapDiv = document.getElementById('googft-mapCanvas');
+    mapDiv.style.width = isMobile ? '100%' : '800px';
+    mapDiv.style.height = isMobile ? '100%' : '600px';
+    var map = new google.maps.Map(mapDiv, {
+      center: new google.maps.LatLng(46.32602782049032, -91.76461476562497),
+      zoom: 3,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+    map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(document.getElementById('googft-legend-open'));
+    map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(document.getElementById('googft-legend'));
+
+    layer = new google.maps.FusionTablesLayer({
+      map: map,
+      heatmap: { enabled: false },
+      query: {
+        select: "col17",
+        from: "1iPF1TdZ-z6z4aaRi91IJIIwP8Tx2zEJSws2W_kfy",
+        where: ""
+      },
+      options: {
+        styleId: 2,
+        templateId: 2
+      }
+    });
+
+    if (isMobile) {
+      var legend = document.getElementById('googft-legend');
+      var legendOpenButton = document.getElementById('googft-legend-open');
+      var legendCloseButton = document.getElementById('googft-legend-close');
+      legend.style.display = 'none';
+      legendOpenButton.style.display = 'block';
+      legendCloseButton.style.display = 'block';
+      legendOpenButton.onclick = function() {
+        legend.style.display = 'block';
+        legendOpenButton.style.display = 'none';
+      }
+      legendCloseButton.onclick = function() {
+        legend.style.display = 'none';
+        legendOpenButton.style.display = 'block';
+      }
+    }
+  }
+
+  google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+</head>
+
+<style>
+body{
+  width: 800px;
+  margin: 30px auto;
+  font-family: "times new roman";
+  font-size: 18px;
+  line-height: 1.4em;
+  background-color: #F1F1F1;
+}
+
+h1{
+font-weight:normal;
+font-size:33px;
+margin-bottom: 0px;
+padding-bottom: 0px;
+}
+
+.rest-title a {
+  font-size:16px;
+  text-align: center;
+  font-weight:bold;
+}
+
+
+h2{
+  font-weight:normal;
+  margin-top: 6px;
+
+}
+
+h3{
+margin-bottom: 0px;
+padding-bottom: 0px;
+}
+
+.future{
+  color:#707070;
+  }
+
+.look_foward{
+  color:#707070;
+  font-style: oblique;
+}
+
+img{
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+</style>
+
+<body>
+
+
+<h1>Invaders Fit for Consumption</h1>
+<h2> INTERACTIVE MAP: Restaurants around the country are serving up lionfish, creating a novel opportunity for invasive species management </h2>
+  <p>  
+ What to do with a species that doesn&#39;t belong, is spreading like wildfire, and causing damage to native ecosystems? </p>
+
+ <p> Some are suggesting take down by knife and fork. </p>
+
+ <p> The idea, termed invasivorism, is growing in popularity as an alternative strategy to control invasive species. But after speaking to experts and many invasivores, it&#39;s clear that it&#39;ll be pretty hard for this idea to actually work. In order for a species to be controlled via consumption chefs have to be able to acquire it and make it delicious enough for people to want to eat. It&#39;s a difficult task&mdash;a majority of the  <a href= "http://www.fws.gov/invasives/faq.html#citation-corn">4,300 invasives</a> will never meet the necessary criteria. Yet there is a least one species that invasivores, experts and chefs deem a serious contender for control by consumption&hellip; the lionfish. 
+    </p>  
+
+      <h3> The worst marine invasion to date </h3>
+        <p> Lionfish aren&#39;t native to the waters of the Western Atlantic, Caribbean and Gulf of Mexico, where they are now <a href="http://www.plosone.org/article/fetchObject.action?uri=info%3Adoi%2F10.1371%2Fjournal.pone.0032596&representation=PDF">taking over</a>&mdash;reducing native marine species by an average of 65 percent. Originally from the Indo-Pacific, the striped psychedelic-looking invader was <a href="http://graysreef.noaa.gov/science/publications/pdfs/morris_akins_2009.pdf">first spotted in 1985</a>, off the southeast coast of Florida, after reportedly being dumped out of some fish tanks. The situation has since changed dramatically: </p>
+
+      <img src ="fish2.gif"></img>
+
+<p> &ldquo;We&#39;re finding them as shallow as inches and as deep as a thousand feet,&rdquo; said <a href= "http://www.reef.org/about/staff">Lad Akins</a>, Director of Special Projects at Reef Environmental Education Foundation (REEF) who has led the charge in battling the invasion, organizing <a href= "http://www.reef.org/lionfish/derbies">lionfish derbies</a> and co-authoring a <a href= "http://www.reef.org/catalog/cookbook">cookbook</a>. &ldquo;Determining just how many are out there is not within our realm&mdash;for certain it is many millions.&rdquo; </p>
+
+<p> And each one of these millions of fish is perfectly designed for ecosystem takeover. Equipped with 18, sharp, venomous spines&mdash;the fish has no known predators. Capable of reproducing throughout the year, every three to four days, a single female lionfish can spawn upwards of 2 million eggs annually. And their appetites make them appear more vacuum than vertebrae. &ldquo;Lionfish are glutinous predators, they will eat anything that moves and fits into their mouth, sometimes larger than half their own body size,&rdquo; Akins said. And they have absolutely no concept of portion control&mdash;eating <a href= "http://thescholarship.ecu.edu/bitstream/handle/10342/2724/Cerino_ecu_0600M_10151.pdf">more than 1,000 pounds of prey per acre per year</a> in places such as the Bahamas. This includes native species such as snapper and grouper, vital for local economies and small reef dwellers such as the fish that clean the algae off the reefs (NAME?), cleaner wrasses that help to keep parasite load down on the reef required to maintain natural ecosystem stability. &ldquo;There just may not be a lot left after lionfish have run their course,&rdquo; Akins said. </p>
+
+<p> The dramatic influence on biodiversity, experts say, isn&#39;t in the realm of a price tag. &ldquo;The coral reefs are like our Yellowstone in the sea,&rdquo; said <a href="http://oceanservice.noaa.gov/profiles/oct11/morris.html">James Morris</a>, an ecologist at the National Centers for Coastal Ocean Science and one of NOAA&#39;s premiere lionfish experts. &ldquo;Now we have an invasive species that&#39;s threatening the integrity of these valuable natural resources&mdash;it&#39;s really hard to translate that into economic dollars.&rdquo; What&#39;s worse, Morris noted, is that the invasion hasn&#39;t reached its peak yet. And if we don&#39;t get the populations under control, the damage will be irreversible. </p>
+
+<h3> Methods to avoid disaster </h3> 
+  <p> &ldquo;Complete elimination is no longer an option,&rdquo; Morris said. In a recent study, he estimated that more than a quarter of adult lionfish would have to be <a href="http://link.springer.com/article/10.1007%2Fs10530-010-9786-8">removed every month</a> in order for the population to decrease. &ldquo;Now, this is really about triage,&rdquo; he added. </p>
+
+  <img src = "spearing.png">
+
+  <p> There are plenty of management strategies out there. Morris works with conservation area managers to develop sustainable management plans. Researchers are figuring out the largest number of lionfish that can inhabit a certain area in order to recover native species&#39; populations and reestablish the former ecosystem. When lionfish were removed to these established &ldquo;threshold densities,&rdquo; researchers found a <a href="http://ir.library.oregonstate.edu/xmlui/bitstream/handle/1957/45163/Green et al. in press Ecol App%5b1%5d.pdf?sequence=1">50 to 70 percent increase</a> in the biomass of the native fish eaten by lionfish. Derbies, like the ones organized by Akins of REEF, have proven extremely successful in their efforts. And individuals, equipped with spears, have made lionfish hunting a popular sport. </p>
+
+  <p> Yet the issue, the experts point out, is sustaining these removal efforts, because lionfish aren&#39;t an easy catch and hard work requires incentive. &ldquo;This is not your ordinary run of the mill fish that you can collect in large numbers with a drag net,&rdquo; Akins said. &ldquo;Divers have to go out there and catch them with spears or nets.&rdquo; In order to clean the reefs of these invasive species, Akins and others are supporting harvesting the fish for food. &ldquo;The commercial fishing industry is one of the best ways of controlling lionfish for the long term," Morris said. <p>
+
+  <p> And control by consumption is already proving successful. Jamaica&#39;s National Environment and Planning Agency recently reported <a href="http://bigstory.ap.org/article/jamaica-reports-big-drop-lionfish-sightings">a 66 percent drop in lionfish sightings</a>&mdash;mainly attributed to the growing demand for lionfish fillets. &ldquo;The fact is, they&#39;ve been consumed in their native range forever,&rdquo; Akins said. &ldquo;This isn&#39;t a trash fish that nobody wants which is a really good thing because if they weren&#39;t delicious, we&#39;d be in serious trouble.&rdquo; </p>
+ 
+<h3> Invading a menu near you </h3> 
+
+<p> Prodded by scientists, conservationist and fearless foodies&mdash;the restaurant industry is starting to catch on, creating the demand for the fish that&#39;s a delicious sustainable alternative to overfished menu items such as snapper and grouper. &ldquo;It&#39;s good for us, it&#39;s good for you, it&#39;s good for the environment and it&#39;s delicious,&rdquo; said Ryan Chadwick, owner of Norman&#39;s Cay, the only restaurant in New York City serving lionfish. </p>
+
+<p> The profit is often derived through an educational message promoting sustainability. Krazy Fish advertises the invasive menu item through its Facebook page. Lazy Days Restaurant runs ads in the local paper and Castaway Waterfront Restaurant and Sushi Bar has stickers all over the restaurant which read &ldquo;Save the Reef, Eat a Lionfish.&rdquo; At Chef Michael&#39;s, where tourists are abundant, the chef prepares little fritters for sampling accompanied by a message that choosing lionfish can help save the reef. &ldquo;I tell people its yummalicious and give them a sample,&rdquo; noted the chef, Michael Ledwith. The strategy to expand palate range beyond the locals who, in a majority of restaurants in the Florida area are aware of the problem and have already taken to eating the fish, seems to be working. &ldquo;We run out whenever we have it,&rdquo; Ledwith added. </p>
+
+These restaurants are just a few among the many&mdash;depicted in the map below&mdash;that have begun to serve the fish. The restaurants featured in this map were first identified from lists comprised by REEF and the World Lionfish Hunters Association (WHLA). Each restaurant from those lists was then called to confirm (or deny) that lionfish was served. Follow-up questioning and networking led to phone calls with restaurants unidentified by either REEF or WHLA. The map below is thus the most comprehensive and up-to-date list of restaurants that serve lionfish in the United States. Click around to explore different trends such as when lionfish first invaded a menu, whether it's a menu staple or restaurant special, the different methods restaurants use to get the fish, how it's prepared and how much it costs. <br> <br>
+
+ <div id="googft-mapCanvas"></div>
+
+<p> Lionfish are an invasive species perfect for mass-consumption: abundant, easily-acquirable (if given enough incentive) and tasty enough for chefs to want to prepare and people to get over their fears and order. Both Akins and Morris couldn&#39;t be more pleased. &ldquo;This is a great opportunity for everyone to be apart of a long-lasting effort to help get lionfish out of the water,&rdquo; Akins said. &ldquo;People are getting educated and accustomed to this idea and frankly, harvesting lionfish is our only option,&rdquo; Morris said. </p>  
+
+
+<h3 class="future"> For the future </h3> 
+
+<p class= "look_foward"> Yet lionfish are not the only invasive species showing up in restaurants around the country. The fish provides a compelling example of a species fit for consumption, but it&#39;s not the only one. I&#39;ve started to add restaurants serving other invasives but now I&#39;m turning the tables and loosening the reigns. I&#39;m opening the map up for open contribution. If you&#39;re a chef, supplier, foodie or evenly remotely interested in this movement please add a place where you&#39;ve seen invasives on the menu, or tried one for yourself. I hope this can become a collaboration&mdash;a growing project to spread the word and employ our appetites as one method of invasive species control. </p>
+
+
+ 
+
+</body>
+</html>
